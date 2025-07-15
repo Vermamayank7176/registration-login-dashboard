@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form </title>
+    <link rel="stylesheet" href="css/styles_register.css">   
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Account</h1>
+        
+        <form id="registerForm">
+            <div class="profile-section">
+                <div class="profile-pic-container">
+                    <div class="profile-pic-preview" id="profilePicPreview">
+                        <img id="profileImg" src="" alt="Profile" style="display: none;">
+                    </div>
+                    <input type="file" id="profilePic" accept="image/*" style="display: none;">
+                    <button type="button" class="upload-btn" onclick="document.getElementById('profilePic').click()">
+                        Upload Profile Picture
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-layout">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    <div class="error" id="fullNameError"></div>
+                    <div class="success" id="fullNameSuccess">✓ Valid name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <div class="error" id="emailError"></div>
+                    <div class="success" id="emailSuccess">✓ Valid email</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required placeholder="Create a strong password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">👁️</button>
+                    </div>
+                    <div class="error" id="passwordError"></div>
+                    <div class="success" id="passwordSuccess">✓ Strong password</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <div class="password-container">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Confirm your password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                    </div>
+                    <div class="error" id="confirmPasswordError"></div>
+                    <div class="success" id="confirmPasswordSuccess">✓ Passwords match</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    <div class="error" id="phoneError"></div>
+                    <div class="success" id="phoneSuccess">✓ Valid phone number</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <div class="error" id="dobError"></div>
+                    <div class="success" id="dobSuccess">✓ Valid date</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label>
+                        </div>
+                    </div>
+                    <div class="error" id="genderError"></div>
+                    <div class="success" id="genderSuccess">✓ Gender selected</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <select id="city" name="city" required>
+                        <option value="">Select your city</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Lucknow">Lucknow</option>
+                    </select>
+                    <div class="error" id="cityError"></div>
+                    <div class="success" id="citySuccess">✓ City selected</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="address">Address *</label>
+                    <textarea id="address" name="address" rows="3" required placeholder="Enter your full address"></textarea>
+                    <div class="error" id="addressError"></div>
+                    <div class="success" id="addressSuccess">✓ Valid address</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label>Skills Known *</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="html" name="skills" value="HTML">
+                            <label for="html">HTML</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="css" name="skills" value="CSS">
+                            <label for="css">CSS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="js" name="skills" value="JavaScript">
+                            <label for="js">JavaScript</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="react" name="skills" value="React">
+                            <label for="react">React</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="node" name="skills" value="Node.js">
+                            <label for="node">Node.js</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="python" name="skills" value="Python">
+                            <label for="python">Python</label>
+                        </div>
+                    </div>
+                    <div class="error" id="skillsError"></div>
+                    <div class="success" id="skillsSuccess">✓ Skills selected</div>
+                </div>
+
+                <div class="form-group full-width">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I accept the Terms and Conditions *</label>
+                    </div>
+                    <div class="error" id="termsError"></div>
+                    <div class="success" id="termsSuccess">✓ Terms accepted</div>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">Create Account</button>
+                <div class="login-link">
+                    Already have an account? <a href="#" onclick="alert('Login page would open here')">Login here</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Profile picture preview
+        document.getElementById('profilePic').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('profilePicPreview');
+            const img = document.getElementById('profileImg');
+            
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    preview.classList.add('has-image');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Password toggle function
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            const toggle = field.nextElementSibling;
+            
+            if (field.type === 'password') {
+                field.type = 'text';
+                toggle.textContent = '🙈';
+            } else {
+                field.type = 'password';
+                toggle.textContent = '👁️';
+            }
+        }
+
+        // Validation functions
+        function showError(fieldId, message) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const successElement = document.getElementById(fieldId + 'Success');
+            const field = document.getElementById(fieldId);
+            
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+            successElement.classList.remove('show');
+            field.classList.add('shake');
+            
+            setTimeout(() => field.classList.remove('shake'), 500);
+        }
+
+        function showSuccess(fieldId) {
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const successElement = document.getElementById(fieldId + 'Success');
+            
+            errorElement.classList.remove('show');
+            successElement.classList.add('show');
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePhone(phone) {
+            const re = /^[0-9]{10}$/;
+            return re.test(phone.replace(/\D/g, ''));
+        }
+
+        function validatePassword(password) {
+            return password.length >= 8 && /[A-Z]/.test(password) && /[a-z]/.test(password) && /[0-9]/.test(password);
+        }
+
+        // Real-time validation
+        document.getElementById('fullName').addEventListener('input', function() {
+            const name = this.value.trim();
+            if (name.length >= 2) {
+                showSuccess('fullName');
+            } else if (name.length > 0) {
+                showError('fullName', 'Name must be at least 2 characters');
+            }
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            const email = this.value.trim();
+            if (validateEmail(email)) {
+                showSuccess('email');
+            } else if (email.length > 0) {
+                showError('email', 'Please enter a valid email address');
+            }
+        });
+
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            if (validatePassword(password)) {
+                showSuccess('password');
+            } else if (password.length > 0) {
+                showError('password', 'Password must be 8+ characters with uppercase, lowercase, and number');
+            }
+        });
+
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            if (confirmPassword && password === confirmPassword) {
+                showSuccess('confirmPassword');
+            } else if (confirmPassword.length > 0) {
+                showError('confirmPassword', 'Passwords do not match');
+            }
+        });
+
+        document.getElementById('phone').addEventListener('input', function() {
+            const phone = this.value.trim();
+            if (validatePhone(phone)) {
+                showSuccess('phone');
+            } else if (phone.length > 0) {
+                showError('phone', 'Please enter a valid 10-digit phone number');
+            }
+        });
+
+        // Gender validation
+        document.querySelectorAll('input[name="gender"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    showSuccess('gender');
+                }
+            });
+        });
+
+        // Date of birth validation
+        document.getElementById('dob').addEventListener('change', function() {
+            const today = new Date();
+            const birthDate = new Date(this.value);
+            const age = today.getFullYear() - birthDate.getFullYear();
+            
+            if (age >= 13 && age <= 120) {
+                showSuccess('dob');
+            } else {
+                showError('dob', 'Please enter a valid date of birth');
+            }
+        });
+
+        // City validation
+        document.getElementById('city').addEventListener('change', function() {
+            if (this.value) {
+                showSuccess('city');
+            }
+        });
+
+        // Address validation
+        document.getElementById('address').addEventListener('input', function() {
+            const address = this.value.trim();
+            if (address.length >= 10) {
+                showSuccess('address');
+            } else if (address.length > 0) {
+                showError('address', 'Please enter a complete address');
+            }
+        });
+
+        // Skills validation
+        document.querySelectorAll('input[name="skills"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedSkills = document.querySelectorAll('input[name="skills"]:checked');
+                if (checkedSkills.length > 0) {
+                    showSuccess('skills');
+                } else {
+                    showError('skills', 'Please select at least one skill');
+                }
+            });
+        });
+
+        // Terms validation
+        document.getElementById('terms').addEventListener('change', function() {
+            if (this.checked) {
+                showSuccess('terms');
+            } else {
+                showError('terms', 'You must accept the terms and conditions');
+            }
+        });
+
+        // Form submission
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            let isValid = true;
+            
+            // Check all required fields
+            const requiredFields = ['fullName', 'email', 'password', 'confirmPassword', 'phone', 'dob', 'address', 'city'];
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    showError(field, 'This field is required');
+                    isValid = false;
+                }
+            });
+            
+            // Check gender
+            const genderChecked = document.querySelector('input[name="gender"]:checked');
+            if (!genderChecked) {
+                showError('gender', 'Please select your gender');
+                isValid = false;
+            }
+            
+            // Check skills
+            const skillsChecked = document.querySelectorAll('input[name="skills"]:checked');
+            if (skillsChecked.length === 0) {
+                showError('skills', 'Please select at least one skill');
+                isValid = false;
+            }
+            
+            // Check terms
+            const termsChecked = document.getElementById('terms').checked;
+            if (!termsChecked) {
+                showError('terms', 'You must accept the terms and conditions');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Simulate form submission
+                const submitBtn = document.querySelector('.submit-btn');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Creating Account...';
+                
+                setTimeout(() => {
+                    alert('Account created successfully!');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Create Account';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
