@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <div class="profile-pic-container">
+                <div class="profile-pic-preview" id="profilePicPreview">
+                    <img id="profileImg" src="" alt="Profile" style="display: none;">
+                </div>
+                <input type="file" id="profilePic" accept="image/*" style="display: none;">
+                <button type="button" onclick="document.getElementById('profilePic').click()">Upload Profile Picture</button>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <div class="error" id="fullNameError"></div>
+                <div class="success" id="fullNameSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error" id="emailError"></div>
+                <div class="success" id="emailSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="password-toggle" onclick="togglePassword('password')">👁️</button>
+                </div>
+                <div class="error" id="passwordError"></div>
+                <div class="success" id="passwordSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <div class="password-container">
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</button>
+                </div>
+                <div class="error" id="confirmPasswordError"></div>
+                <div class="success" id="confirmPasswordSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error" id="phoneError"></div>
+                <div class="success" id="phoneSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender *</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label>
+                    </div>
+                </div>
+                <div class="error" id="genderError"></div>
+                <div class="success" id="genderSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+                <div class="error" id="dobError"></div>
+                <div class="success" id="dobSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address *</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+                <div class="error" id="addressError"></div>
+                <div class="success" id="addressSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City *</label>
+                <select id="city" name="city" required>
+                    <option value="">Select City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Lucknow">Lucknow</option>
+                </select>
+                <div class="error" id="cityError"></div>
+                <div class="success" id="citySuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Skills Known *</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="html" name="skills" value="HTML">
+                        <label for="html">HTML</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="css" name="skills" value="CSS">
+                        <label for="css">CSS</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="js" name="skills" value="JavaScript">
+                        <label for="js">JavaScript</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="react" name="skills" value="React">
+                        <label for="react">React</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="node" name="skills" value="Node.js">
+                        <label for="node">Node.js</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="python" name="skills" value="Python">
+                        <label for="python">Python</label>
+                    </div>
+                </div>
+                <div class="error" id="skillsError"></div>
+                <div class="success" id="skillsSuccess"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I accept the Terms and Conditions *</label>
+                </div>
+                <div class="error" id="termsError"></div>
+                <div class="success" id="termsSuccess"></div>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+        
+        <div class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
